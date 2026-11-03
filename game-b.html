@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KeyMagnet — Keyboard Precision | Typing Challenge</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="keymagnet">
+    <a class="home-link" href="index.html">⌂ All Games</a>
+
+    <main class="app">
+      <!-- HOME SCREEN -->
+      <section id="homeScreen" class="screen active home">
+        <p class="eyebrow">CSC336 Web Technologies · Typing Challenge · Mode B</p>
+        <h1><span>🧲</span><span class="title-text">KeyMagnet</span></h1>
+        <p class="subtitle">Keyboard Precision</p>
+        <p class="desc">
+          A target key appears. Find it on the keyboard and press it as fast and
+          as accurately as you can before the clock runs out.
+        </p>
+
+        <div class="card settings">
+          <h2>Choose difficulty</h2>
+          <div id="difficultySeg" class="seg" role="group" aria-label="Difficulty">
+            <button type="button" class="seg-btn" data-level="easy">Easy</button>
+            <button type="button" class="seg-btn active" data-level="medium">Medium</button>
+            <button type="button" class="seg-btn" data-level="hard">Hard</button>
+          </div>
+
+          <h2 class="second">Choose key set</h2>
+          <select id="keySetSelect" aria-label="Key set"></select>
+          <p id="keySetKeys" class="keys-preview" aria-live="polite"></p>
+
+          <dl id="diffInfo" class="facts"></dl>
+        </div>
+
+        <ul class="rules">
+          <li><b>Correct key</b>: +10 points.</li>
+          <li><b>Wrong key</b> or running out of time on a key: penalty points and a red warning.</li>
+          <li><b>Difficulty</b> changes the session time, the time allowed per key, the hints and the key set.</li>
+          <li><b>The session ends</b> when the clock reaches zero — then you see your full statistics.</li>
+        </ul>
+
+        <button id="startBtn" class="btn primary big" type="button">▶ Start</button>
+      </section>
+
+      <!-- GAME SCREEN -->
+      <section id="gameScreen" class="screen" aria-label="Game">
+        <div class="topbar">
+          <div class="title-group">
+            <h2 class="mini-title">KeyMagnet</h2>
+            <span id="diffBadge" class="badge">Medium</span>
+            <span id="setBadge" class="badge alt">All letters</span>
+          </div>
+          <div class="controls">
+            <button id="restartBtn" class="btn" type="button">↻ Restart</button>
+            <button id="resetBtn" class="btn" type="button">⟲ Reset</button>
+          </div>
+        </div>
+
+        <section class="hud" aria-label="Game status">
+          <div><span class="lbl">Score</span><strong id="score">0</strong></div>
+          <div id="timeCell"><span class="lbl">Time left</span><strong id="time">0</strong></div>
+          <div><span class="lbl">Correct</span><strong id="correct" class="good">0</strong></div>
+          <div><span class="lbl">Incorrect</span><strong id="incorrect" class="bad">0</strong></div>
+          <div><span class="lbl">Avg response</span><strong id="average">—</strong></div>
+          <div><span class="lbl">Streak</span><strong id="streak">0</strong></div>
+        </section>
+
+        <section id="stage" class="stage card" aria-label="Target key">
+          <p class="prompt">PRESS THIS KEY</p>
+          <div id="targetKey" class="target-key" aria-live="polite">?</div>
+          <div id="keyTimerWrap" class="key-timer" aria-hidden="true">
+            <i id="keyTimerBar"></i>
+          </div>
+          <p id="keyTimerNote" class="timer-note"></p>
+          <p id="feedback" role="status" aria-live="polite">Get ready…</p>
+        </section>
+
+        <section class="keyboard-wrap">
+          <p class="hint">Press the key on your keyboard — or tap it here</p>
+          <div id="keyboard" class="keyboard" aria-label="On-screen keyboard"></div>
+        </section>
+      </section>
+
+      <!-- RESULTS SCREEN -->
+      <section id="resultsScreen" class="screen results" aria-live="polite">
+        <div id="resultIcon" class="result-icon">⏱️</div>
+        <h2 id="resultTitle">Time's Up!</h2>
+        <p id="resultReason" class="desc"></p>
+        <div id="resultGrid" class="result-grid"></div>
+        <div class="result-actions">
+          <button id="playAgainBtn" class="btn primary big" type="button">↻ Play Again</button>
+          <a class="btn" href="index.html">🎮 All Games</a>
+          <button id="homeBtn" class="btn" type="button">⌂ Change Settings</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

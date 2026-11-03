@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typing Challenge | Choose a Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="home">
+    <main class="app">
+      <section class="hub" aria-labelledby="gameTitle">
+        <p class="eyebrow">CSC336 Web Technologies · Lab Mid · Fall 2026</p>
+        <h1 id="gameTitle"><span class="title-text">Typing Challenge</span></h1>
+        <p class="subtitle">Choose your game mode</p>
+        <p class="desc">
+          Two typing games, each with Easy, Medium and Hard levels, live score,
+          instant feedback and a full results screen. Pick one and press Start.
+        </p>
+
+        <div class="modes">
+          <article class="card mode-card a">
+            <span class="mode-tag">Mode A</span>
+            <div class="mode-icon" aria-hidden="true">A</div>
+            <h2>Bubbles</h2>
+            <p class="mode-sub">Letter Recognition</p>
+            <p class="mode-desc">
+              Letter bubbles float up the screen. Press the matching key (or
+              tap the bubble) to pop it before it escapes through the top!
+            </p>
+            <a class="btn primary big" href="game-a.html">▶ Start</a>
+          </article>
+
+          <article class="card mode-card b">
+            <span class="mode-tag">Mode B</span>
+            <div class="mode-icon" aria-hidden="true">🧲</div>
+            <h2>KeyMagnet</h2>
+            <p class="mode-sub">Keyboard Precision</p>
+            <p class="mode-desc">
+              A target key appears. Find it on the on-screen keyboard and press
+              it as fast and as accurately as you can before the clock runs
+              out.
+            </p>
+            <a class="btn primary big" href="game-b.html">▶ Start</a>
+          </article>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

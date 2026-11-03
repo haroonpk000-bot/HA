@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bubbles — Letter Recognition | Typing Challenge</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="bubbles">
+    <a class="home-link" href="index.html">⌂ All Games</a>
+
+    <main class="app">
+      <!-- HOME SCREEN -->
+      <section id="homeScreen" class="screen active home">
+        <p class="eyebrow">CSC336 Web Technologies · Typing Challenge · Mode A</p>
+        <h1><span class="logo-bubble">A</span><span class="title-text">Bubbles</span></h1>
+        <p class="subtitle">Letter Recognition</p>
+        <p class="desc">
+          Letter bubbles float up the screen. Press the matching key on your
+          keyboard (or tap the bubble) to pop it before it escapes through the
+          top!
+        </p>
+
+        <div class="card settings">
+          <h2>Choose difficulty</h2>
+          <div id="difficultySeg" class="seg" role="group" aria-label="Difficulty">
+            <button type="button" class="seg-btn" data-level="easy">Easy</button>
+            <button type="button" class="seg-btn active" data-level="medium">Medium</button>
+            <button type="button" class="seg-btn" data-level="hard">Hard</button>
+          </div>
+          <dl id="diffInfo" class="facts"></dl>
+        </div>
+
+        <ul class="rules">
+          <li><b>Correct key</b> pops the bubble: +10 points.</li>
+          <li><b>Wrong key</b> (no such bubble on screen) costs a penalty points and flashes red.</li>
+          <li><b>Miss</b> = a bubble touches the red line at the top. Too many misses and it's game over.</li>
+          <li><b>Level up</b> every 5 pops: bubbles get faster and more of them appear.</li>
+        </ul>
+
+        <button id="startBtn" class="btn primary big" type="button">▶ Start</button>
+      </section>
+
+      <!-- GAME SCREEN -->
+      <section id="gameScreen" class="screen" aria-label="Game">
+        <div class="topbar">
+          <div class="title-group">
+            <h2 class="mini-title">Bubbles</h2>
+            <span id="diffBadge" class="badge">Medium</span>
+          </div>
+          <div class="controls">
+            <button id="restartBtn" class="btn" type="button">↻ Restart</button>
+            <button id="resetBtn" class="btn" type="button">⟲ Reset</button>
+          </div>
+        </div>
+
+        <section class="hud" aria-label="Game status">
+          <div><span class="lbl">Score</span><strong id="score">0</strong></div>
+          <div><span class="lbl">Level</span><strong id="level">1</strong></div>
+          <div><span class="lbl">Time</span><strong id="time">0:00</strong></div>
+          <div><span class="lbl">Popped</span><strong id="popped">0</strong></div>
+          <div><span class="lbl">Streak</span><strong id="streak">0</strong></div>
+          <div><span class="lbl">Misses</span><strong id="misses">0 / 0</strong></div>
+        </section>
+
+        <p id="message" role="status" aria-live="polite">Get ready…</p>
+
+        <div id="playfield" class="playfield" aria-label="Bubble play area">
+          <div class="miss-line"><span>MISS LINE</span></div>
+          <div id="bubbleLayer" class="bubble-layer"></div>
+        </div>
+        <p class="hint">Type the letter on a bubble · or tap the bubble</p>
+      </section>
+
+      <!-- RESULTS SCREEN -->
+      <section id="resultsScreen" class="screen results" aria-live="polite">
+        <div id="resultIcon" class="result-icon">💥</div>
+        <h2 id="resultTitle">Game Over</h2>
+        <p id="resultReason" class="desc"></p>
+        <div id="resultGrid" class="result-grid"></div>
+        <div class="result-actions">
+          <button id="playAgainBtn" class="btn primary big" type="button">↻ Play Again</button>
+          <a class="btn" href="index.html">🎮 All Games</a>
+          <button id="homeBtn" class="btn" type="button">⌂ Change Difficulty</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
